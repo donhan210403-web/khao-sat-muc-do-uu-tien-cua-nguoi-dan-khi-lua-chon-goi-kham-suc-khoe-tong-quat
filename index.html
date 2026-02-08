@@ -3,125 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <title>Khảo sát lựa chọn gói khám sức khỏe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font dễ thương -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
       margin: 0;
-      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
+
+    .card {
       background: #ffffff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      max-width: 900px;
+      width: 90%;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 0.8s ease;
     }
-    h1 { color: #2c3e50; }
-    p { line-height: 1.7; color: #333; }
-    .question { margin-top: 30px; }
-    .options button {
-      margin: 8px 10px 0 0;
-      padding: 10px 20px;
-      font-size: 15px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+
+    h1 {
+      color: #2c7be5;
+      margin-bottom: 10px;
+    }
+
+    .sticker {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: justify;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .question {
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .question h3 {
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .options label {
+      display: block;
+      background: #f5f7fa;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      background-color: #f8f9fa;
+      transition: 0.2s;
     }
-    .options button:hover { background-color: #e9ecef; }
-    .hidden { display: none; }
-    .thank-you {
-      margin-top: 30px;
-      padding: 20px;
-      background-color: #f1f8f4;
-      border-left: 5px solid #2ecc71;
+
+    .options label:hover {
+      background: #e8f0fe;
     }
-    .continue-btn {
+
+    button {
       margin-top: 30px;
-      padding: 12px 28px;
+      padding: 14px 28px;
       font-size: 16px;
-      background-color: #2ecc71;
-      color: #fff;
       border: none;
-      border-radius: 6px;
+      border-radius: 30px;
+      background: #2c7be5;
+      color: white;
       cursor: pointer;
+      transition: 0.3s;
     }
-    .continue-btn:hover { background-color: #27ae60; }
+
+    button:hover {
+      background: #1a5dcc;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 
 <body>
-<div class="container">
 
-  <h1>Giới thiệu nghiên cứu</h1>
+<div class="card" id="intro">
+  <div class="sticker">🩺✨</div>
+  <h1>Khảo sát nghiên cứu khoa học</h1>
 
   <p>
-    Nghiên cứu này nhằm xác định các yếu tố của gói dịch vụ khám sức khỏe tổng quát cơ bản
-    (chi phí, thời gian chờ, địa điểm khám, trình độ bác sĩ, hỗ trợ chi trả, …) ảnh hưởng
-    đến mức độ ưu tiên lựa chọn của người dân.
+    <strong>Thân chào Anh/Chị,</strong>
   </p>
 
   <p>
-    Kết quả nghiên cứu giúp đề xuất và thiết kế các gói khám phù hợp hơn với nhu cầu thực tế
-    của người dân, đồng thời hỗ trợ các cơ sở khám bệnh nâng cao chất lượng dịch vụ.
+    Chúng tôi là nhóm nghiên cứu đến từ <strong>Bộ môn Quản lý Dược, Trường Dược – Đại học Y Dược Thành phố Hồ Chí Minh</strong>.
   </p>
 
   <p>
-    Trước khi bắt đầu khảo sát chính thức, chúng tôi xin phép thực hiện một số câu hỏi
-    sàng lọc ngắn.
+    Nhóm nghiên cứu hiện đang tiến hành một <strong>thử nghiệm lựa chọn rời rạc (Discrete Choice Experiment – DCE)</strong> nhằm đánh giá <strong>mức độ ưu tiên của người dân khi lựa chọn gói dịch vụ khám sức khỏe tổng quát cơ bản</strong> tại các cơ sở khám bệnh trên địa bàn Thành phố Hồ Chí Minh.
   </p>
 
-  <!-- ĐỘ TUỔI -->
+  <p>
+    Mọi ý kiến phản hồi của Anh/Chị đều có ý nghĩa quan trọng, góp phần giúp nhóm nghiên cứu hoàn thiện đề tài và phản ánh sát thực tế nhu cầu của người sử dụng dịch vụ y tế. Khảo sát được thực hiện hoàn toàn tự nguyện, không thu thập thông tin định danh cá nhân và đảm bảo tính bảo mật theo đúng nguyên tắc đạo đức nghiên cứu.
+  </p>
+
+  <p>
+    Chúng tôi rất mong nhận được sự hợp tác của Anh/Chị để kết quả nghiên cứu đạt được độ khách quan và chính xác cao nhất.
+  </p>
+
+  <p>
+    <strong>Xin chân thành cảm ơn sự quan tâm và hỗ trợ từ Anh/Chị.</strong>
+  </p>
+
+  <p>
+    ✨ Mọi thắc mắc về nghiên cứu xin vui lòng liên hệ:
+    <br><br>
+    <strong>GVHD:</strong> ThS. Nguyễn Thanh Huy (huynguyen@ump.edu.vn)  
+    <br>
+    <strong>Sinh viên:</strong> Đỗ Linh Nhân (dlnhan.d21@ump.edu.vn – 0344454421)
+  </p>
+
+  <button onclick="startSurvey()">👉 Bắt đầu khảo sát</button>
+</div>
+
+<div class="card hidden" id="screening">
+  <div class="sticker">📋💖</div>
+  <h1>Câu hỏi sàng lọc</h1>
+
   <div class="question">
-    <p><strong>1. Độ tuổi của Anh/Chị:</strong></p>
+    <h3>1️⃣ Anh/Chị hiện nay:</h3>
     <div class="options">
-      <button onclick="stopSurvey()">Dưới 18 tuổi</button>
-      <button onclick="showIntention()">Từ 18 tuổi trở lên</button>
+      <label><input type="radio" name="age" value="under18"> Dưới 18 tuổi</label>
+      <label><input type="radio" name="age" value="18plus"> Từ 18 tuổi trở lên</label>
     </div>
   </div>
 
-  <!-- Ý ĐỊNH KHÁM -->
-  <div class="question hidden" id="intention">
-    <p><strong>
-      2. Anh/Chị đã từng hoặc có ý định sử dụng dịch vụ khám sức khỏe tổng quát không?
-    </strong></p>
+  <div class="question">
+    <h3>2️⃣ Anh/Chị đã từng hoặc có ý định khám sức khỏe tổng quát?</h3>
     <div class="options">
-      <button onclick="randomRedirect()">Đã từng khám</button>
-      <button onclick="randomRedirect()">Có ý định khám</button>
-      <button onclick="stopSurvey()">Không có ý định khám</button>
+      <label><input type="radio" name="intent" value="yes"> Đã từng khám / Có ý định khám</label>
+      <label><input type="radio" name="intent" value="no"> Không có ý định khám</label>
     </div>
   </div>
 
-  <!-- DỪNG -->
-  <div class="thank-you hidden" id="stopMessage">
-    <p>Chúng tôi xin chân thành cảm ơn Anh/Chị đã dành thời gian quan tâm đến nghiên cứu.</p>
-    <p>Do tiêu chí nghiên cứu, khảo sát xin được kết thúc tại đây.</p>
-    <p><strong>Kính chúc Anh/Chị nhiều sức khỏe!</strong></p>
-  </div>
+  <button onclick="handleResult()">Tiếp tục ➜</button>
+</div>
 
+<div class="card hidden" id="thanks">
+  <div class="sticker">🌷💌</div>
+  <h1>Lời cảm ơn</h1>
+
+  <p>
+    Nhóm nghiên cứu xin chân thành cảm ơn Anh/Chị đã dành thời gian quan tâm và tham gia trả lời các câu hỏi sàng lọc của khảo sát.
+  </p>
+
+  <p>
+    Do tiêu chí của nghiên cứu hiện tại chưa thực sự phù hợp với trường hợp của Anh/Chị, nên rất tiếc Anh/Chị chưa thể tiếp tục tham gia các nội dung khảo sát chuyên sâu.
+  </p>
+
+  <p>
+    Tuy nhiên, sự quan tâm và thiện chí của Anh/Chị là nguồn động viên rất lớn đối với nhóm nghiên cứu. Chúng tôi hy vọng sẽ có cơ hội được đồng hành cùng Anh/Chị trong các nghiên cứu khác trong tương lai.
+  </p>
+
+  <p>
+    💙 Kính chúc Anh/Chị nhiều sức khỏe, bình an và thành công trong cuộc sống.
+  </p>
 </div>
 
 <script>
-  // 🔗 ĐỔI 2 LINK FORM Ở ĐÂY
-  const formA = "https://forms.gle/LDvWaQFUwotD4RfD8";
-  const formB = "https://forms.gle/H67DMEuTQJ37r6TC7";
-
-  function showIntention() {
-    document.getElementById("intention").classList.remove("hidden");
+  function startSurvey() {
+    document.getElementById('intro').classList.add('hidden');
+    document.getElementById('screening').classList.remove('hidden');
   }
 
-  function stopSurvey() {
-    document.getElementById("stopMessage").classList.remove("hidden");
-  }
+  function handleResult() {
+    const age = document.querySelector('input[name="age"]:checked');
+    const intent = document.querySelector('input[name="intent"]:checked');
 
-  function randomRedirect() {
-    const rand = Math.random();
-    if (rand < 0.5) {
-      window.location.href = formA;
+    if (!age || !intent) {
+      alert("Anh/Chị vui lòng trả lời đầy đủ các câu hỏi trước khi tiếp tục 😊");
+      return;
+    }
+
+    if (age.value === "under18" || intent.value === "no") {
+      document.getElementById('screening').classList.add('hidden');
+      document.getElementById('thanks').classList.remove('hidden');
     } else {
-      window.location.href = formB;
+      // 🔴 THAY 2 LINK GOOGLE FORM Ở ĐÂY
+      const formA = "https://forms.gle/8dkoR8xBfJ9gjH5v9";
+      const formB = "https://forms.gle/kQkCseejBMxCDfvu5";
+
+      const randomLink = Math.random() < 0.5 ? formA : formB;
+      window.location.href = randomLink;
     }
   }
 </script>
